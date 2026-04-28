@@ -69,9 +69,6 @@ See generated chart:
 ---
 
 ## 📄 Detailed Report
-A full academic report including methodology, SQL queries, Hadoop challenges, and analysis is available here:
-
-👉 Download Full Report
 
 The report is included in this repository and contains detailed explanations of the Hadoop-based processing, SQL sentiment analysis, methodology, and implementation steps.
 ---
