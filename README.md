@@ -42,19 +42,20 @@ The project demonstrates a full data processing pipeline including data cleaning
 
 ## ▶️ How to Run
 
-### 1. Create virtual environment
-python3 -m venv venv source venv/bin/activate
+# 1. Create virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
-### 2. Install dependencies
+# 2. Install dependencies
 pip install pandas matplotlib vaderSentiment
 
-### 3. Preprocess data
+# 3. Preprocess data
 python3 preprocessing.py
 
-### 4. Run MapReduce
+# 4. Run MapReduce
 cat tweets_ldjson.json | python3 mapper.py | sort | python3 reducer.py > wordcount_output.tsv
 
-### 5. Generate visualization
+# 5. Generate visualization
 python3 plot_wordcount.py
 
 ---
@@ -96,4 +97,4 @@ This project demonstrates how Big Data tools can be used to analyze social media
 ---
 
 ## 👤 Authors
-** Elif Nehir Özer **
+- Elif Nehir Özer
