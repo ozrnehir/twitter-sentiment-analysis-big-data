@@ -2,87 +2,85 @@
 # 📊 Twitter Sentiment Analysis using Big Data Tools
 
 ## 🚀 Overview
-This project analyzes Twitter data related to the Iran–Israel conflict using Big Data technologies. The goal is to extract meaningful insights such as trending keywords and public sentiment from large-scale tweet data.
+This project analyzes Twitter data related to the Iran–Israel conflict to extract insights about public sentiment and trending topics.
 
-The project demonstrates a full data processing pipeline including data cleaning, MapReduce-based word counting, sentiment analysis, and data visualization.
+It demonstrates an end-to-end Big Data pipeline including data preprocessing, Hadoop-style MapReduce processing, SQL-based sentiment analysis, and data visualization.
 
 ---
 
 ## 🧠 Technologies Used
-- Python
-- Hadoop (MapReduce concept)
-- Pandas
-- Matplotlib
-- PostgreSQL (SQL Analysis)
+- Python (data processing & visualization)
+- Hadoop & HDFS (conceptual usage for large-scale processing)
+- MapReduce (word frequency analysis)
+- PostgreSQL (SQL-based sentiment analysis)
+- Pandas & Matplotlib
 - VADER Sentiment Analysis
 
 ---
 
 ## ⚙️ Project Workflow
-1. Data Collection  
-   Tweets collected using Twitter API (JSON format)
+1. Data Collection
+   - Tweets collected via Twitter API in JSON format
 
-2. Preprocessing  
+2. Preprocessing
    - Cleaning text (removing links, mentions, symbols)
-   - Converting JSON to line-based format
+   - Converting nested JSON into line-based format for processing
 
-3. MapReduce Processing  
+3. MapReduce Processing
    - mapper.py → emits word counts  
-   - reducer.py → aggregates counts  
+   - reducer.py → aggregates word frequencies  
 
-4. Sentiment Analysis  
-   - Using VADER to classify tweets  
-   - Output stored in CSV
+4. Sentiment Analysis
+   - Tweets labeled using VADER sentiment analysis  
+   - Stored and analyzed using SQL queries  
 
-5. Visualization  
-   - Bar chart (Top 20 words)  
-   - Pie chart (Top 5 words)
+5. Visualization
+   - Bar chart (Top 20 most frequent words)
+   - Pie chart (Top 5 keywords)
 
 ---
 
 ## ▶️ How to Run
 
-# 1. Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
+Run the following commands step by step:
 
-# 2. Install dependencies
-pip install pandas matplotlib vaderSentiment
-
-# 3. Preprocess data
-python3 preprocessing.py
-
-# 4. Run MapReduce
-cat tweets_ldjson.json | python3 mapper.py | sort | python3 reducer.py > wordcount_output.tsv
-
-# 5. Generate visualization
-python3 plot_wordcount.py
+bash python3 -m venv venv source venv/bin/activate  pip install pandas matplotlib vaderSentiment  python3 preprocessing.py  cat tweets_ldjson.json | python3 mapper.py | sort | python3 reducer.py > wordcount_output.tsv  python3 plot_wordcount.py 
 
 ---
 
 ## 📈 Sample Output
-Top frequent words:
-- Iran
-- Israel
-- War
-- Military
-- Conflict
+The most frequent words reflect major themes such as:
 
-(See wordcount_chart.png for visualization)
+- Iran  
+- Israel  
+- War  
+- Military  
+- Conflict  
+
+These results highlight the focus of public discourse during the analyzed period.
 
 ---
 
-## 📄 Report
-Detailed explanation of methodology, challenges, and results can be found here:
+## 📊 Visualization
+See generated chart:
 
-👉 Download Report
+- wordcount_chart.png
 
+---
+
+## 📄 Detailed Report
+A full academic report including methodology, SQL queries, Hadoop challenges, and analysis is available here:
+
+👉 Download Full Report
+
+The report is included in this repository and contains detailed explanations of the Hadoop-based processing, SQL sentiment analysis, methodology, and implementation steps.
 ---
 
 ## 💡 Key Insights
 - Majority of tweets show negative sentiment
-- A small group of users contributes a large portion of content
-- Discussions heavily focus on geopolitical conflict themes
+- Public discussion is heavily focused on geopolitical conflict
+- A small number of users generate a large portion of content
+- Data preprocessing is critical for accurate analysis   
 
 ---
 
@@ -92,7 +90,7 @@ Detailed explanation of methodology, challenges, and results can be found here:
 ---
 
 ## 🎯 Conclusion
-This project demonstrates how Big Data tools can be used to analyze social media data and extract meaningful insights about global events.
+This project demonstrates how Big Data tools and social media analytics can be combined to understand global events and public opinion.
 
 ---
 
